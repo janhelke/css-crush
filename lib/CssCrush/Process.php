@@ -915,7 +915,7 @@ class Process
         foreach ([
             'pcre.backtrack_limit' => 1000000,
             'pcre.jit' => 0, // Have run into PREG_JIT_STACKLIMIT_ERROR (issue #82).
-            'memory_limit' => '128M',
+            'memory_limit' => '512M',
         ] as $name => $value) {
             $this->iniOriginal[$name] = ini_get($name);
             if ($name === 'memory_limit' && $this->returnBytes(ini_get($name)) > $this->returnBytes($value)) {
